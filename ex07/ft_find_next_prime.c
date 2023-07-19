@@ -6,14 +6,14 @@
 /*   By: fcamoin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:58:17 by fcamoin           #+#    #+#             */
-/*   Updated: 2023/07/19 11:35:13 by fcamoin          ###   ########.fr       */
+/*   Updated: 2023/07/19 12:39:50 by fcamoin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_find_next_prime(int nb)
+int	ft_is_prime(int nb)
 {
-	int     n;
-	
+	int	n;
+
 	n = 2;
 	if (nb < 2)
 		return (0);
@@ -25,3 +25,18 @@ int	ft_find_next_prime(int nb)
 	}
 	return (1);
 }
+
+int	ft_find_next_prime(int nb)
+{
+	while (nb < 2147483647 && !ft_is_prime(nb))
+		nb++;
+	return (nb);
+}
+
+/*#include <stdio.h>
+
+int	main()
+{
+	printf("%d", ft_find_next_prime(194));
+	return (0);
+}*/
